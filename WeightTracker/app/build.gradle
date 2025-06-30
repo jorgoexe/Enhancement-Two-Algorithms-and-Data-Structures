@@ -1,0 +1,53 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'com.example.weighttracker'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.weighttracker"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+
+    // ========== Security Enhancement Dependencies ========== //
+    implementation 'org.mindrot:jbcrypt:0.4' // Password hashing library
+
+    // ========== Additional Recommended Dependencies ========== //
+    implementation 'androidx.sqlite:sqlite:2.4.0'        // Improved SQLite support
+    implementation 'androidx.security:security-crypto:1.1.0-alpha06' // Encrypted preferences
+    implementation 'com.google.android.material:material:1.12.0'     // Updated material components
+
+    // Lifecycle components for better architecture
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.8.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.8.1'
+
+    // Unit testing dependencies
+    testImplementation 'org.mockito:mockito-core:5.12.0'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+}

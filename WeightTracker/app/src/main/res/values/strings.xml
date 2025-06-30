@@ -1,0 +1,43 @@
+<resources>
+    <!-- App Info -->
+    <string name="app_name">WeightTracker</string>
+
+    <!-- Login Screen -->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="button_register">Register</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password_requirements">Must be 8+ characters with number/symbol</string>
+    <string name="login_error">Invalid username or password</string>
+    <string name="registration_success">Registration successful! Please login</string>
+    <string name="registration_failed">Registration failed. Username may exist</string>
+
+    <!-- Main Screen -->
+    <string name="welcome_message">Welcome, %s!</string>
+    <string name="goal_achieved">Goal achieved! 🎉</string>
+    <string name="lbs_to_goal">%.1f lbs to reach your goal</string>
+    <string name="add_weight_title">Add Weight Entry</string>
+    <string name="button_save">Save</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="entry_saved">Entry saved successfully</string>
+    <string name="invalid_number">Please enter valid numbers</string>
+
+    <!-- Menu Items -->
+    <string name="logout">Logout</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="logout_success">Logged out successfully</string>
+    <string name="delete_confirm_title">Delete Account</string>
+    <string name="delete_confirm_message">All your data will be permanently deleted. Continue?</string>
+    <string name="account_deleted">Account deleted</string>
+    <string name="delete_failed">Failed to delete account</string>
+
+    <!-- Weight Entry Dialog -->
+    <string name="hint_date">Date (YYYY-MM-DD)</string>
+    <string name="hint_weight">Weight (lbs)</string>
+    <string name="hint_goal">Goal Weight (optional)</string>
+
+    <!-- Error Messages -->
+    <string name="session_expired">Session expired. Please login again.</string>
+    <string name="save_failed">Failed to save entry</string>
+</resources>

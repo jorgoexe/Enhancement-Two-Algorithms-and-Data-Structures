@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.main.MainActivity">
+
+    <!-- Header with welcome and progress -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryDark"
+            tools:text="Welcome, User!"
+            android:importantForAccessibility="yes"
+            android:contentDescription="Welcome message"/>
+
+        <TextView
+            android:id="@+id/tv_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            tools:text="Goal Progress: 75%"
+            android:contentDescription="Goal progress percentage"/>
+    </LinearLayout>
+
+    <!-- Input fields and button container -->
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <!-- Date Input -->
+        <EditText
+            android:id="@+id/et_date"
+            android:hint="Date (yyyy-MM-dd)"
+            android:inputType="date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="yes"/>
+
+        <!-- Weight Input -->
+        <EditText
+            android:id="@+id/et_weight"
+            android:hint="Weight"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="yes"/>
+
+        <!-- Goal Input (optional) -->
+        <EditText
+            android:id="@+id/et_goal"
+            android:hint="Goal (optional)"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="yes"/>
+
+        <!-- Add Button -->
+        <Button
+            android:id="@+id/btn_add"
+            android:text="Add Entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:importantForAccessibility="yes"/>
+    </LinearLayout>
+
+    <!-- New Moving Average Display -->
+    <TextView
+        android:id="@+id/tv_moving_average"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7-Day Moving Average:"
+        android:padding="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:contentDescription="7-day moving average weights"/>
+
+    <!-- RecyclerView to display weight entries -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/inputLayout"
+        android:layout_above="@+id/fab"
+        android:clipToPadding="false"
+        android:paddingBottom="72dp"
+        android:contentDescription="List of weight entries"
+        android:background="#ffeeee" />
+
+    <!-- FloatingActionButton to add new weight -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="Add weight entry"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:tint="@android:color/white"/>
+</LinearLayout>
